@@ -255,6 +255,13 @@ production
     margin-bottom: 0.4rem;
 }
 
+.pro a{
+    color:blue;
+}
+
+.pro a:hover {
+    color:gray;
+}
 
 /* Contents */
 .brown-bg {
