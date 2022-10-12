@@ -89,16 +89,19 @@ main {
 table {
     margin: 3.5rem 0;
     width: 100%;
+    border:none;
 }
 th,
 td {
     display: block;
+    border:none;
 }
 th {
     font-weight: normal;
     background: #f8f6f2;
     vertical-align: middle;
     padding: 1rem;
+
 }
 td {
     padding: .75rem 1rem 1.75rem;
@@ -286,46 +289,17 @@ production
     text-align: center;
 }
 
-/* グラフの文字 */
-.ct-label {
-    font-size: 1rem;
-    fill: #fff;
+#skill {
+    padding:0.5%;
+}
+.skill_detail {
+    width:80%;
+    position:relative;
+    left:10%;
 }
 
-/* 円グラフ */
-.ct-series-a .ct-slice-pie {
-    fill: #2d3374;
-}
-.ct-series-b .ct-slice-pie {
-    fill: #3a7edf;
-}
-.ct-series-c .ct-slice-pie {
-    fill: #9bcbf8;
-}
-.ct-series-d .ct-slice-pie {
-    fill: #bbb;
-}
 
-/* 棒グラフ */
-.ct-series-a .ct-bar {
-    stroke: #3a7edf;
-}
-.ct-bar {
-    stroke-width: 16%;
-}
 
-/*
-JOB.html
-================================================ */
-.page-job {
-    background-image: url('../images/bg-job.jpg'), linear-gradient(180deg, transparent 0%,transparent 50%, #F8F6F2 50%, #F8F6F2 100%);
-    background-position: left 106px, 0 0;
-    background-size: 70vw auto, contain;
-    background-repeat: no-repeat;
-}
-.page-job .btn {
-    margin-bottom: 4rem;
-}
 
 /* Timeline */
 .timeline-item {
@@ -403,107 +377,8 @@ JOB.html
 }
 
 
-/*
-FORM.html
-================================================ */
-.page-form {
-    background-image: url('../images/bg-form.jpg'), linear-gradient(180deg, transparent 0%,transparent 50%, #F8F6F2 50%, #F8F6F2 100%);
-    background-position: right 106px, 0 0;
-    background-size: 70vw auto, contain;
-    background-repeat: no-repeat;
-}
-.text-small {
-    font-size: .875rem;
-}
 
-/* Form */
-input[type='text'],
-input[type='email'],
-input[type='url'],
-select,
-textarea {
-    border: 1px solid #bbb;
-    background: #fff;
-    padding: .5rem;
-    width: 100%;
-}
-input[type='text']::placeholder,
-input[type='email']::placeholder,
-input[type='url']::placeholder,
-textarea::placeholder {
-    color: #bbb;
-}
-textarea {
-    height: 10rem;
-}
 
-label {
-    display: block;
-    margin-bottom: 1rem;
-}
-
-.select-box {
-    position: relative;
-}
-.select-box::after {
-    display: inline-block;
-    position: absolute;
-    top: .625rem;
-    right: 1rem;
-/* Font Awesome */
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-weight: 900;
-    content: '\f078';
-    color: #bbb;
-}
-
-/* デフォルトのチェックボックスを非表示 */
-input[type='checkbox'] {
-    opacity:0;
-    -webkit-appearance: none;
-    appearance: none;
-    position: absolute;
-}
-/* チェックボックス用の四角形を作る */
-input[type='checkbox'] + span::before {
-    display: inline-block;
-    content: '';
-    width: 1.5rem;
-    height: 1.5rem;
-    border: 1px solid #bbb;
-    background: #fff;
-    margin: -.125rem .5rem 0 0;
-    vertical-align: middle;
-
-/* Font Awesome */
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    font-weight: 900;
-    padding: 0 2px;
-    line-height: 1.5;
-}
-/* チェックが入るとチェックアイコンを表示 */
-input[type='checkbox']:checked + span::before {
-    content: '\f00c';
-}
-
-/*
-FOOTER
-================================================ */
-footer {
-    background: #2D3374;
-    color: rgba(255,255,255,.8);
-    padding: 3.5rem 1rem;
-    text-align: center;
-}
-footer .btn {
-    margin-bottom: 3.5rem;
-}
-.footer-nav li {
-    margin: 1rem 0;
-}
-.footer-nav a {
-    color: #d5d7e4;
-}
 
 /*
 DESKTOP SIZE
@@ -521,24 +396,29 @@ DESKTOP SIZE
     }
 
 /* Table */
-    tr:nth-child(odd) {
-        background: #f8f6f2;
-    }
-    tr:nth-child(even) th {
-        background: #fff;
-    }
 
     th,
     td {
         padding: 1.25rem;
         display: table-cell;
+        border: 1px solid #7c7e92;
     }
     th {
         width: 24%;
         vertical-align: middle;
+        text-align :center;
     }
     td {
         width: 76%;
+    }
+
+    #skill {
+        padding:5%;
+    }
+    .skill_detail {
+        width:80%;
+        position:relative;
+        left:10%;
     }
 
 /* Header */
@@ -664,24 +544,6 @@ DESKTOP SIZE
         width:100%;
     }
 
-/* Form */
-    label {
-        display: inline-block;
-        margin: 0 1.5rem 0 0;
-    }
-    .select-box {
-        width: 40%;
-    }
 
-/* Footer */
-    .footer-nav {
-        display: flex;
-        justify-content: center;
-    }
-    .footer-nav li {
-        margin: 0 .75rem;
-    }
-    .footer-nav a:hover {
-        color: #fff;
-    }
+
 }
