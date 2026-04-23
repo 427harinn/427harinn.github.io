@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TravelPlanner | Haruka Karakawa Portfolio</title>
+  <meta name="description" content="旅行先を地図上で整理し、共有・共同編集できる旅行プランニングWebアプリ" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./index.html" class="logo">
+        <span class="logo-mark">HK</span>
+        <span class="logo-text">
+          <strong>Haruka Karakawa</strong>
+          <small>Portfolio</small>
+        </span>
+      </a>
+
+      <nav class="global-nav">
+        <a href="./index.html#about">About</a>
+        <a href="./index.html#projects">Projects</a>
+        <a href="./index.html#skills">Skills</a>
+        <a href="./index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="project-detail-page">
+    <section class="project-hero">
+      <div class="container project-hero-grid">
+        <div class="project-hero-copy">
+          <p class="section-label">PERSONAL / TOOLS</p>
+          <h1>TravelPlanner</h1>
+          <p class="project-hero-lead">
+            旅行先を地図上で整理し、共有・共同編集できる旅行プランニングWebアプリ
+          </p>
+          <p class="project-hero-description">
+            旅行の予定や行き先を地図上でまとめて確認しながら、
+            スポット情報の登録・公開リンクでの共有・共同編集まで行えるようにしたWebアプリです。
+            個人での旅行計画だけでなく、複数人で予定を整理することも意識して制作しました。
+          </p>
+
+          <ul class="project-meta-list">
+            <li><strong>種別</strong><span>個人開発Webアプリ</span></li>
+            <li><strong>使用技術</strong><span>React / Firebase / Firestore / Leaflet</span></li>
+            <li><strong>役割</strong><span>設計・実装・UI調整</span></li>
+            <li><strong>公開</strong><span>GitHub Pages で公開</span></li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href="https://427harinn.github.io/TravelPlanner/" class="button button-primary">デモを見る</a>
+            <a href="./index.html#projects" class="button button-secondary">一覧に戻る</a>
+          </div>
+        </div>
+
+        <div class="project-hero-visual">
+          <div class="project-hero-image">
+            <img src="./images/project-travel.png" alt="TravelPlanner メイン画像" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container detail-grid">
+        <article class="detail-main">
+
+          <div class="detail-section">
+            <p class="section-label">OVERVIEW</p>
+            <h2>概要</h2>
+            <p>
+              TravelPlanner は、旅行の行き先や予定を地図上で整理しながら確認できるWebアプリです。
+              スポットの登録や計画の保存に加えて、公開リンクを使った共有や、
+              条件付きでの共同編集にも対応しています。
+            </p>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">BACKGROUND</p>
+            <h2>作ろうと思った背景</h2>
+            <p>
+              旅行計画を立てるとき、地図・メモ・時系列の予定がバラバラになりやすく、
+              「どこに行くのか」「どの順番で回るのか」をまとめて見たいと感じたことがきっかけでした。
+            </p>
+            <p>
+              また、自分だけでなく他の人にも見せたり、一緒に調整したりできる形にしたいと考え、
+              共有や共同編集の仕組みも取り入れました。
+            </p>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">PROBLEM</p>
+            <h2>解決したい課題</h2>
+            <div class="detail-card-list">
+              <div class="detail-card">
+                <h3>旅行情報が分散しやすい</h3>
+                <p>
+                  行き先、地図、予定、メモが別々になりやすく、全体を把握しづらいという課題がありました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>共有しにくい</h3>
+                <p>
+                  旅行の計画を他の人に見せたいときに、地図・予定・補足情報をまとめて共有できる形が欲しいと感じました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>共同編集したい場面がある</h3>
+                <p>
+                  複数人で予定を立てるとき、相手にも編集してもらえる仕組みがあると便利だと考えました。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">SOLUTION</p>
+            <h2>主な機能</h2>
+            <div class="detail-card-list two">
+              <div class="detail-card">
+                <h3>地図上で旅行先を可視化</h3>
+                <p>
+                  Leaflet を使って旅行先を地図上に表示し、位置関係を確認しながら計画を整理できるようにしました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>旅行プランの保存</h3>
+                <p>
+                  Firestore に旅行プランを保存し、ログインユーザーごとに継続して編集できる構成にしています。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>公開リンクで共有</h3>
+                <p>
+                  共有用IDを使って、公開可能な旅行プランを他の人にも見せられるようにしています。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>共同編集対応</h3>
+                <p>
+                  指定したメールアドレスのユーザーが編集できる仕組みを入れ、複数人での利用も想定しました。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">FLOW</p>
+            <h2>データの流れ</h2>
+            <div class="flow-box">
+              <ol class="flow-list">
+                <li>ユーザーがログイン</li>
+                <li>旅行プランを作成・編集</li>
+                <li>Firestore に保存</li>
+                <li>必要に応じて shareId 付きで公開</li>
+                <li>他ユーザーが閲覧、または共同編集</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">TECHNICAL POINTS</p>
+            <h2>技術的なポイント</h2>
+            <div class="detail-card-list two">
+              <div class="detail-card">
+                <h3>Firebase Authentication</h3>
+                <p>
+                  Googleログインやメール認証を扱える構成にして、ユーザーごとのプラン管理ができるようにしました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>Firestore でプランを管理</h3>
+                <p>
+                  旅行プランを `travelPlans` として保存し、所有者や編集者の情報も含めて扱っています。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>公開用 shareId の発行</h3>
+                <p>
+                  公開リンク用のIDを作ることで、ログインなしでも閲覧できる共有導線を用意しました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>地図ライブラリの利用</h3>
+                <p>
+                  React から Leaflet を使う構成で、位置情報をベースにした画面を作っています。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">POINT</p>
+            <h2>工夫した点</h2>
+            <div class="detail-card-list">
+              <div class="detail-card">
+                <h3>個人利用だけで終わらせない設計</h3>
+                <p>
+                  ただ自分で使うだけでなく、共有や共同編集まで見据えて設計したことで、
+                  サービスとしての使い方を意識できました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>「地図で見る」体験を中心にしたUI</h3>
+                <p>
+                  テキストだけの予定表ではなく、位置関係を視覚的に把握しやすいことを重視しました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>Firebase を使った継続利用</h3>
+                <p>
+                  保存・認証・共有までまとめて扱うことで、単発の画面ではなく継続利用しやすい形を目指しました。
+                </p>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="detail-section">
+            <p class="section-label">LEARNING</p>
+            <h2>この制作で得たこと</h2>
+            <p>
+              React での画面構成だけでなく、Firebase を用いた認証・保存・共有まで含めて、
+              Webアプリとして必要な流れを一通り形にする経験ができました。
+              また、単機能のツールではなく「他の人と使うこと」を意識した設計の大切さを学びました。
+            </p>
+          </div>
+        </article>
+
+        <aside class="detail-side">
+          <div class="side-card">
+            <p class="section-label">SUMMARY</p>
+            <h2>要点</h2>
+            <ul class="side-list">
+              <li>旅行先を地図上で整理できる</li>
+              <li>React + Firebase で構成</li>
+              <li>保存・共有・共同編集に対応</li>
+              <li>GitHub Pages で公開</li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <p class="section-label">KEYWORDS</p>
+            <h2>キーワード</h2>
+            <ul class="side-link-list">
+              <li><span>React</span></li>
+              <li><span>Firebase</span></li>
+              <li><span>Firestore</span></li>
+              <li><span>Leaflet</span></li>
+              <li><span>Share Link</span></li>
+              <li><span>共同編集</span></li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <p class="section-label">POSITION</p>
+            <h2>この作品の位置づけ</h2>
+            <p>
+              ポートフォリオ全体の中では、
+              Webツール開発と Firebase を使ったサービス設計の経験を示す代表作のひとつです。
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <section>
+        <p class="footer-label">CONTACT</p>
+        <h2>お問い合わせ</h2>
+        <p>お仕事のご依頼・ご相談はこちらから</p>
+        <a href="mailto:karakawa.haruka@example.com" class="footer-mail">karakawa.haruka@example.com</a>
+      </section>
+
+      <section>
+        <p class="footer-label">LINKS</p>
+        <h2>各種リンク</h2>
+        <ul class="footer-links">
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">X (Twitter)</a></li>
+          <li><a href="./index.html">Portfolio Top</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="footer-label">OTHER</p>
+        <h2>その他</h2>
+        <ul class="footer-links">
+          <li><a href="#">デモページ</a></li>
+          <li><a href="#">関連資料</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Haruka Karakawa All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

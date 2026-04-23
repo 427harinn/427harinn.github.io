@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>電動ストレッチャー支援システム | Haruka Karakawa Portfolio</title>
+  <meta name="description" content="カメラ映像と音声通知による電動ストレッチャー支援システムの研究紹介ページ" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./index.html" class="logo">
+        <span class="logo-mark">HK</span>
+        <span class="logo-text">
+          <strong>Haruka Karakawa</strong>
+          <small>Portfolio</small>
+        </span>
+      </a>
+
+      <nav class="global-nav">
+        <a href="./index.html#about">About</a>
+        <a href="./index.html#projects">Projects</a>
+        <a href="./index.html#skills">Skills</a>
+        <a href="./index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="project-detail-page">
+    <section class="project-hero">
+      <div class="container project-hero-grid">
+        <div class="project-hero-copy">
+          <p class="section-label">PROFESSIONAL / RESEARCH</p>
+          <h1>電動ストレッチャー支援システム</h1>
+          <p class="project-hero-lead">
+            カメラ映像と音声通知によって、移動中の安心感と安全性の向上を目指した修士研究
+          </p>
+          <p class="project-hero-description">
+            視界が制限される利用者に対して、周囲の状況を伝えるための支援システムを開発しました。
+            映像による視界補助と、状況に応じた音声通知を組み合わせることで、
+            移動中の不安や見落としを減らすことを目指しています。
+          </p>
+
+          <ul class="project-meta-list">
+            <li><strong>種別</strong><span>修士研究</span></li>
+            <li><strong>使用技術</strong><span>Unity / Python / RealSense / YOLO / VoiceVox</span></li>
+            <li><strong>役割</strong><span>設計・実装・評価・発表</span></li>
+            <li><strong>成果</strong><span>研究科長賞 受賞</span></li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href="./index.html#projects" class="button button-secondary">一覧に戻る</a>
+          </div>
+        </div>
+
+        <div class="project-hero-visual">
+          <div class="project-hero-image">
+            <img src="./images/project-stretcher.png" alt="電動ストレッチャー支援システム メイン画像" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container detail-grid">
+        <article class="detail-main">
+          <div class="detail-section">
+            <p class="section-label">OVERVIEW</p>
+            <h2>研究概要</h2>
+            <p>
+              本研究では、電動ストレッチャー利用者が周囲の状況を把握しやすくするための支援システムを開発しました。
+              学部時代のシステムでは、前後の映像をモニタに表示することで視界を補っていましたが、
+              実際には「距離感がつかみにくい」「進行方向が分かりにくい」「音声補助が欲しい」といった課題がありました。
+            </p>
+            <p>
+              そこで本研究では、カメラ映像に加えて音声通知を導入し、
+              利用者の安心感や安全性の向上を目指しました。
+            </p>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">BACKGROUND</p>
+            <h2>背景と課題</h2>
+            <div class="detail-card-list">
+              <div class="detail-card">
+                <h3>視界だけでは不足する場面がある</h3>
+                <p>
+                  カメラ映像だけでは距離感や危険度が分かりにくく、
+                  とくに移動中の判断を映像だけに頼るのは負担が大きいという課題がありました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>利用者の身体的制約</h3>
+                <p>
+                  対象者は首や身体を自由に動かしにくいため、
+                  1つのモニタと限られた情報提示の中で、状況を伝える必要がありました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>安心感の向上も重要</h3>
+                <p>
+                  単に危険を知らせるだけでなく、
+                  通常時の案内や会話的な補助によって不安を軽減することも重視しました。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">GOAL</p>
+            <h2>研究の目的</h2>
+            <p>
+              本研究の目的は、視界の確保と周囲状況の伝達を通して、
+              電動ストレッチャー利用者がより安全かつ安心して移動できるよう支援することです。
+            </p>
+            <div class="detail-card-list two">
+              <div class="detail-card">
+                <h3>視界補助</h3>
+                <p>カメラ映像をモニタに表示し、前後の状況を確認しやすくする。</p>
+              </div>
+              <div class="detail-card">
+                <h3>音声補助</h3>
+                <p>危険な場面だけでなく、通常時の案内も含めて状況を伝える。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">SYSTEM</p>
+            <h2>システム構成</h2>
+            <p>
+              システムは、映像表示を担当する Unity、物体検出や距離情報処理を行う Python 環境、
+              音声合成を行う VoiceVox などで構成されています。
+            </p>
+
+            <div class="flow-box">
+              <ol class="flow-list">
+                <li>カメラ・センサで周囲情報を取得</li>
+                <li>Python側で物体検出・状況判定</li>
+                <li>判定結果をもとに音声メッセージを生成</li>
+                <li>Unity側で映像表示と通知を行う</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">FEATURES</p>
+            <h2>主な工夫</h2>
+            <div class="detail-card-list two">
+              <div class="detail-card">
+                <h3>映像と音声の役割分担</h3>
+                <p>
+                  モニタによる視界補助に加えて、必要な情報だけを音声で伝えることで、
+                  見落としを減らしつつ、情報量の負担を抑えることを意識しました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>緊急度に応じた通知</h3>
+                <p>
+                  危険度が高い場合はアラート的に、通常時は案内として伝えるなど、
+                  緊急度に応じて伝え方を変える構成を検討しました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>利用者視点での設計</h3>
+                <p>
+                  単に技術を入れるのではなく、利用者の身体状況や感じる不安を踏まえて、
+                  必要な情報が伝わるように設計しました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>複数技術の連携</h3>
+                <p>
+                  Unity・Python・音声合成・センサ処理を組み合わせ、
+                  ひとつの体験として成立するよう構成しました。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">RESULT</p>
+            <h2>成果</h2>
+            <div class="detail-card-list">
+              <div class="detail-card">
+                <h3>研究科長賞を受賞</h3>
+                <p>
+                  修士研究としてまとめ、研究科長賞を受賞しました。
+                </p>
+              </div>
+              <div class="detail-card">
+                <h3>発表・質疑応答を経験</h3>
+                <p>
+                  発表を通して、ミニマップやLiDAR設置位置、音声案内内容などについて議論し、
+                  研究の整理を深めました。
+                </p>
+              </div>
+              <div class="detail-card">
+                <h3>研究テーマの軸を整理</h3>
+                <p>
+                  「AIを作る」ではなく、「AIを活用して利用者にどう伝えるか」という観点を明確にできました。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">IMAGES</p>
+            <h2>研究イメージ</h2>
+            <div class="detail-image-grid">
+              <figure class="detail-image-card">
+                <img src="./images/project-stretcher-detail-01.png" alt="障害物検出イメージ" />
+                <figcaption>障害物検出イメージ</figcaption>
+              </figure>
+              <figure class="detail-image-card">
+                <img src="./images/project-stretcher-detail-02.png" alt="映像表示のイメージ" />
+                <figcaption>映像表示のイメージ</figcaption>
+              </figure>
+              <figure class="detail-image-card">
+                <img src="./images/project-stretcher-detail-03.png" alt="実験画像" />
+                <figcaption>実験画像</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">FUTURE</p>
+            <h2>今後につなげたいこと</h2>
+            <p>
+              今後は、障害物検出だけでなく、周囲のお店や環境に関する情報なども含めて、
+              状況に応じた多面的な情報提示を行いたいと考えています。
+              また、通常時の対話と緊急時の通知の切り替え方についても、
+              さらに検討を進めたいです。
+            </p>
+          </div>
+        </article>
+
+        <aside class="detail-side">
+          <div class="side-card">
+            <p class="section-label">SUMMARY</p>
+            <h2>要点</h2>
+            <ul class="side-list">
+              <li>映像と音声を組み合わせた支援システム</li>
+              <li>利用者の安心感と安全性の向上を目的とした研究</li>
+              <li>Unity / Python / センサ / 音声合成を連携</li>
+              <li>研究科長賞を受賞</li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <p class="section-label">KEYWORDS</p>
+            <h2>キーワード</h2>
+            <ul class="side-link-list">
+              <li><span>Unity</span></li>
+              <li><span>Python</span></li>
+              <li><span>YOLO</span></li>
+              <li><span>RealSense</span></li>
+              <li><span>VoiceVox</span></li>
+              <li><span>情報伝達</span></li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <p class="section-label">POSITION</p>
+            <h2>この研究の位置づけ</h2>
+            <p>
+              ポートフォリオ全体の中では、
+              「情報をどう伝えるか」という自分の関心が最もよく表れている代表的な研究です。
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <section>
+        <p class="footer-label">CONTACT</p>
+        <h2>お問い合わせ</h2>
+        <p>お仕事のご依頼・ご相談はこちらから</p>
+        <a href="mailto:karakawa.haruka@example.com" class="footer-mail">karakawa.haruka@example.com</a>
+      </section>
+
+      <section>
+        <p class="footer-label">LINKS</p>
+        <h2>各種リンク</h2>
+        <ul class="footer-links">
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">X (Twitter)</a></li>
+          <li><a href="./index.html">Portfolio Top</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="footer-label">OTHER</p>
+        <h2>その他</h2>
+        <ul class="footer-links">
+          <li><a href="#">発表資料（PDF）</a></li>
+          <li><a href="#">自己紹介スライド（PDF）</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Haruka Karakawa All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

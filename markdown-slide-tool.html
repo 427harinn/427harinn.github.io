@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MarkDownSlideTool | Haruka Karakawa Portfolio</title>
+  <meta name="description" content="MarkdownからPowerPointを自動生成するスライド作成支援ツール" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./index.html" class="logo">
+        <span class="logo-mark">HK</span>
+        <span class="logo-text">
+          <strong>Haruka Karakawa</strong>
+          <small>Portfolio</small>
+        </span>
+      </a>
+
+      <nav class="global-nav">
+        <a href="./index.html#about">About</a>
+        <a href="./index.html#projects">Projects</a>
+        <a href="./index.html#skills">Skills</a>
+        <a href="./index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="project-detail-page">
+    <section class="project-hero">
+      <div class="container project-hero-grid">
+        <div class="project-hero-copy">
+          <p class="section-label">PERSONAL / TOOLS</p>
+          <h1>MarkDownSlideTool</h1>
+          <p class="project-hero-lead">
+            MarkdownからPowerPointを自動生成する、スライド作成支援ツール。
+          </p>
+          <p class="project-hero-description">
+            スライド作成時に発生しやすい、本文作成・テンプレート適用・画像配置といった手作業を減らすために、
+            CLI・Quarto・Pythonスクリプトを組み合わせた生成フローを構築しました。
+          </p>
+
+          <ul class="project-meta-list">
+            <li><strong>種別</strong><span>個人開発ツール</span></li>
+            <li><strong>使用技術</strong><span>Node.js / Python / Quarto / Pandoc / Docker</span></li>
+            <li><strong>役割</strong><span>設計・実装・改善</span></li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href="./index.html#projects" class="button button-secondary">一覧に戻る</a>
+          </div>
+        </div>
+
+        <div class="project-hero-visual">
+          <div class="project-hero-image">
+            <img src="./images/project-slide-detail-main.png" alt="MarkDownSlideTool メイン画像" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container detail-grid">
+        <article class="detail-main">
+          <div class="detail-section">
+            <p class="section-label">OVERVIEW</p>
+            <h2>概要</h2>
+            <p>
+              MarkDownSlideTool は、Markdown形式で記述した内容から PowerPoint を生成するためのツールです。
+              単に変換するだけでなく、テンプレート適用や画像の扱いまで含めて、
+              スライド作成をより進めやすくすることを目的にしています。
+            </p>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">BACKGROUND</p>
+            <h2>作ろうと思った背景</h2>
+            <p>
+              スライド作成では、文章を書く作業に加えて、画像配置やテンプレート調整などの手作業が多くなりがちです。
+              特に、Markdownベースで内容を整理したい一方で、最終的には PowerPoint として使いたい場面が多く、
+              その間をつなぐ仕組みが欲しいと感じたことがきっかけでした。
+            </p>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">SOLUTION</p>
+            <h2>解決したこと</h2>
+            <div class="detail-card-list">
+              <div class="detail-card">
+                <h3>1. CLIでプロジェクトを作成</h3>
+                <p>
+                  新規スライドプロジェクトをコマンドで生成し、テンプレート・QMD・画像フォルダなどをまとめて準備できるようにしました。
+                </p>
+              </div>
+              <div class="detail-card">
+                <h3>2. Markdown と画像情報を分離</h3>
+                <p>
+                  QMD 内の画像行を解析し、レンダリング用テキストと画像情報JSONに分けることで、
+                  本文生成と画像配置を別工程で扱えるようにしました。
+                </p>
+              </div>
+              <div class="detail-card">
+                <h3>3. PowerPoint生成後に画像を再配置</h3>
+                <p>
+                  生成後のスライドを解析し、空き領域に応じて画像を配置することで、
+                  手動調整を減らせるようにしました。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">FLOW</p>
+            <h2>処理の流れ</h2>
+            <div class="flow-box">
+              <ol class="flow-list">
+                <li>CLIでプロジェクト作成</li>
+                <li>Markdown / QMD で本文を書く</li>
+                <li>画像情報を抽出して JSON 化</li>
+                <li>Quarto / Pandoc で PPTX を生成</li>
+                <li>Python で画像配置などを後処理</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">TECHNICAL POINTS</p>
+            <h2>技術的なポイント</h2>
+            <div class="detail-card-list two">
+              <div class="detail-card">
+                <h3>テンプレートベースの生成</h3>
+                <p>
+                  Node.js の CLI からプロジェクトを作成し、テンプレートをもとに QMD を生成する構成にしています。
+                </p>
+              </div>
+              <div class="detail-card">
+                <h3>画像と本文の分離処理</h3>
+                <p>
+                  Python で QMD を解析し、画像行だけを抽出して JSON にまとめることで、
+                  レンダリング工程と配置工程を分けています。
+                </p>
+              </div>
+              <div class="detail-card">
+                <h3>PPTXテンプレートの正規化</h3>
+                <p>
+                  テンプレート側のレイアウト名の違いによる問題に対応するため、
+                  正規化スクリプトで扱いやすい状態に整えています。
+                </p>
+              </div>
+              <div class="detail-card">
+                <h3>画像配置の後処理</h3>
+                <p>
+                  生成後のスライドを読み取り、タイトルや本文の位置をもとに空き領域を推定して画像を追加する仕組みを作っています。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">LEARNING</p>
+            <h2>この制作で得たこと</h2>
+            <p>
+              テキスト生成・テンプレート処理・画像配置といった処理を分割することで、
+              複数工程をまたぐツールの設計や改善の考え方を実践できました。
+              また、見た目の出力だけでなく、実際に使いやすい流れを意識して組み立てることの大切さを学びました。
+            </p>
+          </div>
+        </article>
+
+        <aside class="detail-side">
+          <div class="side-card">
+            <p class="section-label">SUMMARY</p>
+            <h2>要点</h2>
+            <ul class="side-list">
+              <li>MarkdownからPPTXを生成</li>
+              <li>テンプレートを使った再利用可能な構成</li>
+              <li>画像情報の抽出と後処理配置</li>
+              <li>Docker上で動作する開発環境</li>
+            </ul>
+          </div>
+
+
+          <div class="side-card">
+            <p class="section-label">POSITION</p>
+            <h2>この作品の位置づけ</h2>
+            <p>
+              ポートフォリオの中では、ゲームや研究とは異なる
+              「ツールを設計して改善する」側面を表す代表作として位置づけています。
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <section>
+        <p class="footer-label">CONTACT</p>
+        <h2>お問い合わせ</h2>
+        <p>お仕事のご依頼・ご相談はこちらから</p>
+        <a href="mailto:karakawa.haruka@example.com" class="footer-mail">karakawa.haruka@example.com</a>
+      </section>
+
+      <section>
+        <p class="footer-label">LINKS</p>
+        <h2>各種リンク</h2>
+        <ul class="footer-links">
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">X (Twitter)</a></li>
+          <li><a href="#">Portfolio Top</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="footer-label">OTHER</p>
+        <h2>その他</h2>
+        <ul class="footer-links">
+          <li><a href="#">履歴書 / 職務経歴書（PDF）</a></li>
+          <li><a href="#">自己紹介スライド（PDF）</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Haruka Karakawa All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
