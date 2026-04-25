@@ -10,28 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css" />
 </head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#" class="logo">
-        <span class="logo-mark">HK</span>
-        <span class="logo-text">
-          <strong>Haruka Karakawa</strong>
-          <small>Portfolio</small>
-        </span>
-      </a>
-
-      <nav class="global-nav">
-        <a href="#about">About</a>
-        <a href="#strengths">Strengths</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
+<body data-page="home">
+  <div id="header-placeholder"></div>
   <main>
     <section class="hero">
       <div class="container hero-grid">
@@ -44,10 +24,6 @@
             ユーザーにとって本質的に役立つプロダクトを届けることを大切にしています。
           </p>
 
-          <div class="hero-actions">
-            <a href="#projects" class="button button-primary">プロジェクトを見る</a>
-            <a href="#about" class="button button-secondary">About Me</a>
-          </div>
 
           <ul class="tech-tags">
             <li>Unity</li>
@@ -158,15 +134,15 @@
             <h2>制作物</h2>
           </div>
           <div class="project-filters">
-            <button class="filter-chip active">すべて</button>
-            <button class="filter-chip">Professional / Research</button>
-            <button class="filter-chip">Personal / Tools</button>
-            <button class="filter-chip">Games</button>
+            <button type="button" class="filter-chip active" data-filter="all" aria-pressed="true">すべて</button>
+            <button type="button" class="filter-chip" data-filter="professional-research" aria-pressed="false">Professional / Research</button>
+            <button type="button" class="filter-chip" data-filter="personal-tools" aria-pressed="false">Personal / Tools</button>
+            <button type="button" class="filter-chip" data-filter="games" aria-pressed="false">Games</button>
           </div>
         </div>
 
         <div class="project-grid">
-          <article class="project-card featured">
+          <article class="project-card featured" data-category="professional-research">
             <div class="project-text">
               <span class="project-type">Professional / Research</span>
               <h3>電動ストレッチャー支援システム（修士研究）</h3>
@@ -183,7 +159,7 @@
             <img src="./images/project-stretcher.png" alt="電動ストレッチャー支援システム" />
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="professional-research">
             <div class="project-text">
               <span class="project-type">Professional / Research</span>
               <h3>アバター情報伝達システム（実務）</h3>
@@ -198,7 +174,7 @@
             <img src="./images/project-avatar.png" alt="アバター情報伝達システム" />
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="personal-tools">
             <div class="project-text">
               <span class="project-type">Personal / Tools</span>
               <h3>MarkDownSlideTool</h3>
@@ -215,7 +191,7 @@
             <img src="./images/project-slide-detail-main.png" alt="MarkDownSlideTool" />
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="personal-tools">
             <div class="project-text">
               <span class="project-type">Personal / Tools</span>
               <h3>TravelPlanner</h3>
@@ -230,7 +206,7 @@
             <img src="./images/project-travel.png" alt="TravelPlanner" />
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="personal-tools">
             <div class="project-text">
               <span class="project-type">Personal / Tools</span>
               <h3>RoomPlanner</h3>
@@ -245,7 +221,7 @@
             <img src="./images/project-room.png" alt="RoomPlanner" />
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="games">
             <div class="project-text">
               <span class="project-type">Games</span>
               <h3>OG3（ノベルゲーム）</h3>
@@ -260,7 +236,7 @@
             <img src="./images/project-og3.png" alt="OG3" />
           </article>
 
-          <article class="project-card">
+          <article class="project-card" data-category="games">
             <div class="project-text">
               <span class="project-type">Games</span>
               <h3>Another Blue</h3>
@@ -376,39 +352,8 @@
     </section>
   </main>
 
-  <footer id="contact" class="site-footer">
-    <div class="container footer-grid">
-      <section>
-        <p class="footer-label">CONTACT</p>
-        <h2>お問い合わせ</h2>
-        <p>お仕事のご依頼・ご相談はこちらから</p>
-        <a href="mailto:karakawa.haruka@example.com" class="footer-mail">karakawa.haruka@example.com</a>
-      </section>
-
-      <section>
-        <p class="footer-label">LINKS</p>
-        <h2>各種リンク</h2>
-        <ul class="footer-links">
-          <li><a href="#">GitHub</a></li>
-          <li><a href="#">X (Twitter)</a></li>
-          <li><a href="#">Unityroom</a></li>
-          <li><a href="#">Steam</a></li>
-        </ul>
-      </section>
-
-      <section>
-        <p class="footer-label">OTHER</p>
-        <h2>その他</h2>
-        <ul class="footer-links">
-          <li><a href="#">履歴書 / 職務経歴書（PDF）</a></li>
-          <li><a href="#">自己紹介スライド（PDF）</a></li>
-        </ul>
-      </section>
-    </div>
-
-    <div class="footer-bottom">
-      <p>© 2026 Haruka Karakawa All rights reserved.</p>
-    </div>
-  </footer>
+  <div id="footer-placeholder"></div>
+<script src="./js/include.js"></script>
+<script src="./js/projects-filter.js"></script>
 </body>
 </html>
