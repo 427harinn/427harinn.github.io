@@ -2,10 +2,9 @@ const pageType = document.body.dataset.page || "detail";
 
 const headerTemplates = {
   home: `
-    <header class="site-header">
+    <header class="site-header site-header--home">
       <div class="container header-inner">
         <a href="./index.html" class="logo" aria-label="Haruka Karakawa Portfolio">
-          <span class="logo-mark">HK</span>
           <span class="logo-text">
             <strong>Haruka Karakawa</strong>
             <small>Portfolio</small>
@@ -13,19 +12,19 @@ const headerTemplates = {
         </a>
 
         <nav class="global-nav" aria-label="Primary navigation">
-          <a href="./index.html#about">About</a>
-          <a href="./index.html#strengths">Strengths</a>
-          <a href="./index.html#projects">Projects</a>
-          <a href="./index.html#skills">Skills</a>
+          <a href="./index.html#about"><span>自己紹介</span></a>
+          <a href="./index.html#strengths"><span>強み</span></a>
+          <a href="./index.html#projects"><span>作品</span></a>
+          <a href="./index.html#skills"><span>スキル</span></a>
         </nav>
+
       </div>
     </header>
   `,
   detail: `
-    <header class="site-header">
+    <header class="site-header site-header--home">
       <div class="container header-inner">
         <a href="./index.html" class="logo" aria-label="Haruka Karakawa Portfolio">
-          <span class="logo-mark">HK</span>
           <span class="logo-text">
             <strong>Haruka Karakawa</strong>
             <small>Portfolio</small>
@@ -33,10 +32,10 @@ const headerTemplates = {
         </a>
 
         <nav class="global-nav" aria-label="Primary navigation">
-          <a href="./index.html#about">About</a>
-          <a href="./index.html#projects">Projects</a>
-          <a href="./index.html#skills">Skills</a>
-          <a href="./index.html#contact">Contact</a>
+          <a href="./index.html#about"><span>自己紹介</span></a>
+          <a href="./index.html#strengths"><span>強み</span></a>
+          <a href="./index.html#projects"><span>作品</span></a>
+          <a href="./index.html#skills"><span>スキル</span></a>
         </nav>
       </div>
     </header>
@@ -46,12 +45,6 @@ const headerTemplates = {
 const footerTemplate = `
   <footer id="contact" class="site-footer">
     <div class="container footer-grid">
-      <!--<section>
-        <p class="footer-label">CONTACT</p>
-        <h2>お問い合わせ</h2>
-        <p>お仕事のご依頼・ご相談はこちらから</p>
-        <a href="mailto:karakawa.haruka@example.com" class="footer-mail">karakawa.haruka@example.com</a>
-      </section>-->
 
       <section>
         <p class="footer-label">LINKS</p>
@@ -59,17 +52,9 @@ const footerTemplate = `
         <ul class="footer-links">
           <li><a href="https://github.com/427harinn">GitHub</a></li>
           <li><a href="https://twitter.com/427harinn_it">X (Twitter)</a></li>
+          <li><a href="https://unityroom.com/users/427harinn">Unityroom</a></li>
         </ul>
       </section>
-
-      <!--<section>
-        <p class="footer-label">OTHER</p>
-        <h2>その他</h2>
-        <ul class="footer-links">
-          <li><a href="#">関連資料（PDF）</a></li>
-          <li><a href="#">自己紹介スライド（PDF）</a></li>
-        </ul>
-      </section>-->
     </div>
 
     <div class="footer-bottom">
