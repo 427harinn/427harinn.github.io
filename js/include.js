@@ -52,7 +52,7 @@ const footerTemplate = `
         <ul class="footer-links">
           <li><a href="https://github.com/427harinn">GitHub</a></li>
           <li><a href="https://twitter.com/427harinn_it">X (Twitter)</a></li>
-          <li><a href="https://unityroom.com/users/427harinn">Unityroom</a></li>
+          <li><a href="https://unityroom.com/users/427harinn">unityroom</a></li>
         </ul>
       </section>
     </div>
