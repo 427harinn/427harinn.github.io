@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RoomPlanner | Haruka Karakawa Portfolio</title>
+  <meta name="description" content="部屋の間取りや家具配置をシミュレーションできるレイアウト設計Webアプリ" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./index.html" class="logo">
+        <span class="logo-mark">HK</span>
+        <span class="logo-text">
+          <strong>Haruka Karakawa</strong>
+          <small>Portfolio</small>
+        </span>
+      </a>
+
+      <nav class="global-nav">
+        <a href="./index.html#about">About</a>
+        <a href="./index.html#projects">Projects</a>
+        <a href="./index.html#skills">Skills</a>
+        <a href="./index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="project-detail-page">
+    <section class="project-hero">
+      <div class="container project-hero-grid">
+        <div class="project-hero-copy">
+          <p class="section-label">PERSONAL / TOOLS</p>
+          <h1>RoomPlanner</h1>
+          <p class="project-hero-lead">
+            部屋の間取りや家具配置をシミュレーションできるレイアウト設計Webアプリ
+          </p>
+          <p class="project-hero-description">
+            部屋サイズを設定し、家具・ドア・窓・コンセントなどを配置しながら、
+            住空間のレイアウトを視覚的に検討できるツールです。
+            家具のサイズ変更や回転、レイアウト保存、JSON入出力、出力プレビューなどにも対応しています。
+          </p>
+
+          <ul class="project-meta-list">
+            <li><strong>種別</strong><span>個人開発Webアプリ</span></li>
+            <li><strong>使用技術</strong><span>React / Firebase / SVG / JSON</span></li>
+            <li><strong>役割</strong><span>設計・実装・UI調整</span></li>
+            <li><strong>機能</strong><span>間取り編集 / 家具配置 / 保存 / 出力プレビュー</span></li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href="https://427harinn.github.io/RoomPlanner/" class="button button-primary">デモを見る</a>
+            <a href="./index.html#projects" class="button button-secondary">一覧に戻る</a>
+          </div>
+        </div>
+
+        <div class="project-hero-visual">
+          <div class="project-hero-image">
+            <img src="./images/project-room.png" alt="RoomPlanner メイン画像" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container detail-grid">
+        <article class="detail-main">
+
+          <div class="detail-section">
+            <p class="section-label">OVERVIEW</p>
+            <h2>概要</h2>
+            <p>
+              RoomPlanner は、部屋の広さや家具のサイズを入力しながら、
+              実際の配置をシミュレーションできるWebアプリです。
+              部屋・家具・付属品を画面上で編集し、レイアウトの検討や保存ができるようにしています。
+            </p>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">BACKGROUND</p>
+            <h2>作ろうと思った背景</h2>
+            <p>
+              部屋の家具配置を考えるとき、寸法や位置関係を頭の中だけで整理するのは難しく、
+              実際に置いてみる前にシミュレーションできるツールがあると便利だと感じました。
+            </p>
+            <p>
+              そこで、部屋のサイズや家具の大きさを入力しながら、
+              視覚的に配置を確認できるレイアウトツールとして制作しました。
+            </p>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">PROBLEM</p>
+            <h2>解決したい課題</h2>
+            <div class="detail-card-list">
+              <div class="detail-card">
+                <h3>家具配置をイメージしづらい</h3>
+                <p>
+                  家具のサイズや部屋の広さを数字だけで見ても、実際の位置関係を把握しづらい課題がありました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>細かい設備も含めて考えたい</h3>
+                <p>
+                  ドアや窓、コンセント、LANポート、柱なども含めて配置を考えられるようにしました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>作ったレイアウトを保存したい</h3>
+                <p>
+                  一度作った配置を後から見直せるように、保存や読み込みの仕組みを取り入れました。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">SOLUTION</p>
+            <h2>主な機能</h2>
+            <div class="detail-card-list two">
+              <div class="detail-card">
+                <h3>部屋の編集</h3>
+                <p>
+                  部屋名・幅・高さ・座標などを編集し、複数の部屋を扱えるようにしています。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>家具の配置・編集</h3>
+                <p>
+                  家具の名前、色、サイズ、位置、回転、角丸などを編集できるようにしています。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>付属品の追加</h3>
+                <p>
+                  ドア、窓、コンセント、LANポート、柱などを部屋に追加し、実際の部屋に近い条件で検討できます。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>保存・読み込み</h3>
+                <p>
+                  JSON形式でレイアウトを書き出し・読み込みできるほか、ログイン時のクラウド保存にも対応しています。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">FLOW</p>
+            <h2>使い方の流れ</h2>
+            <div class="flow-box">
+              <ol class="flow-list">
+                <li>部屋を追加し、サイズを設定</li>
+                <li>家具テンプレートや家具を追加</li>
+                <li>ドア・窓・コンセントなどの付属品を配置</li>
+                <li>画面上で位置やサイズを調整</li>
+                <li>JSON出力やクラウド保存でレイアウトを保存</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">TECHNICAL POINTS</p>
+            <h2>技術的なポイント</h2>
+            <div class="detail-card-list two">
+              <div class="detail-card">
+                <h3>SVGによるレイアウト表示</h3>
+                <p>
+                  部屋や家具をSVG上に描画し、サイズ・位置・回転を反映しながら視覚的に編集できるようにしました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>ドラッグ・リサイズ操作</h3>
+                <p>
+                  家具や部屋をマウス操作で移動・調整できるようにし、直感的に配置を変更できるようにしています。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>JSONインポート / エクスポート</h3>
+                <p>
+                  レイアウト情報をJSONとして保存・復元できるため、ファイルとして管理しやすい構成にしています。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>印刷・共有を意識した出力</h3>
+                <p>
+                  A4出力プレビューやSVG書き出しを意識し、作った配置を見せやすい形に整えられるようにしています。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">POINT</p>
+            <h2>工夫した点</h2>
+            <div class="detail-card-list">
+              <div class="detail-card">
+                <h3>実寸に近い感覚で扱えるようにした</h3>
+                <p>
+                  mmとmを変換しながら扱い、家具や部屋のサイズ感が分かりやすくなるようにしました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>編集パネルを分けて操作しやすくした</h3>
+                <p>
+                  部屋・家具・付属品ごとに編集画面を分け、選択している対象に応じて必要な項目だけを表示しています。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>モバイル表示も意識</h3>
+                <p>
+                  画面幅が小さい場合でも操作できるように、一覧と編集を切り替えるモバイル用ドロワーを用意しています。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">IMAGES</p>
+            <h2>画面イメージ</h2>
+            <div class="detail-image-grid">
+              <figure class="detail-image-card">
+                <img src="./images/project-room-detail-01.png" alt="RoomPlanner メイン画面" />
+                <figcaption>部屋と家具の配置画面</figcaption>
+              </figure>
+              <figure class="detail-image-card">
+                <img src="./images/project-room-detail-02.png" alt="テンプレート追加画面" />
+                <figcaption>家具のテンプレート追加画面</figcaption>
+              </figure>
+              <figure class="detail-image-card">
+                <img src="./images/project-room-detail-03.png" alt="出力プレビュー画面" />
+                <figcaption>出力プレビュー・保存機能</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">LEARNING</p>
+            <h2>この制作で得たこと</h2>
+            <p>
+              RoomPlanner の制作を通して、React上で複雑な編集状態を管理することや、
+              SVGを使った図形描画・ドラッグ操作・JSON入出力などを組み合わせたUI制作を経験しました。
+              また、ユーザーが実際に操作するツールでは、機能だけでなく編集しやすさや保存しやすさも重要だと感じました。
+            </p>
+          </div>
+        </article>
+
+        <aside class="detail-side">
+          <div class="side-card">
+            <p class="section-label">SUMMARY</p>
+            <h2>要点</h2>
+            <ul class="side-list">
+              <li>部屋と家具を視覚的に配置できる</li>
+              <li>ドア・窓・コンセントなどの付属品に対応</li>
+              <li>JSON保存・読み込みに対応</li>
+              <li>出力プレビューも想定した構成</li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <p class="section-label">KEYWORDS</p>
+            <h2>キーワード</h2>
+            <ul class="side-link-list">
+              <li><span>React</span></li>
+              <li><span>Firebase</span></li>
+              <li><span>SVG</span></li>
+              <li><span>JSON</span></li>
+              <li><span>Layout Editor</span></li>
+              <li><span>Room Simulation</span></li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <p class="section-label">POSITION</p>
+            <h2>この作品の位置づけ</h2>
+            <p>
+              ポートフォリオ全体の中では、
+              インタラクティブなUIや編集ツール制作の経験を示す作品として位置づけています。
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <section>
+        <p class="footer-label">CONTACT</p>
+        <h2>お問い合わせ</h2>
+        <p>お仕事のご依頼・ご相談はこちらから</p>
+        <a href="mailto:karakawa.haruka@example.com" class="footer-mail">karakawa.haruka@example.com</a>
+      </section>
+
+      <section>
+        <p class="footer-label">LINKS</p>
+        <h2>各種リンク</h2>
+        <ul class="footer-links">
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">X (Twitter)</a></li>
+          <li><a href="./index.html">Portfolio Top</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <p class="footer-label">OTHER</p>
+        <h2>その他</h2>
+        <ul class="footer-links">
+          <li><a href="#">デモページ</a></li>
+          <li><a href="#">関連資料</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Haruka Karakawa All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
