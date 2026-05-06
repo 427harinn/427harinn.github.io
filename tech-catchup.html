@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>技術キャッチアップ支援ツール | Haruka Karakawa Portfolio</title>
+  <meta name="description" content="RSSや技術ブログの記事を収集し、自分の興味に合わせて選別・要約する個人用の情報収集支援ツール" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body data-page="detail">
+  <div id="header-placeholder"></div>
+
+  <main class="project-detail-page">
+    <section class="project-hero">
+      <div class="container project-hero-grid">
+        <div class="project-hero-copy">
+          <p class="section-label">PERSONAL / TOOLS</p>
+          <h1>技術キャッチアップ支援ツール</h1>
+
+          <p class="project-hero-lead">
+            毎日のIT記事を、自分に合った形で収集・選別・要約する個人用ツール
+          </p>
+
+          <p class="project-hero-description">
+            技術ブログやRSSから記事を集め、自分の興味に近い記事を選び、
+            要約してスマホから読みやすく確認できるようにするためのWebアプリです。
+            単に記事を一覧表示するだけでなく、「何が重要か」「自分にどう関係するか」
+            「次に何をすればよいか」まで整理できる仕組みを目指しています。
+          </p>
+
+          <ul class="project-meta-list">
+            <li><strong>種別</strong><span>個人開発 / 情報収集支援ツール</span></li>
+            <li><strong>使用技術</strong><span>React / Node.js / Express / SQLite / Docker</span></li>
+            <li><strong>連携</strong><span>Codex CLI / Notion API / Tailscale / PowerShell</span></li>
+            <li><strong>役割</strong><span>企画・設計・実装・運用</span></li>
+          </ul>
+
+          <div class="hero-actions">
+            <a href="./index.html#projects" class="button button-secondary">一覧に戻る</a>
+          </div>
+        </div>
+
+        <div class="project-hero-visual">
+          <div class="project-hero-image">
+            <img src="./images/project-tech-catchup.png" alt="技術キャッチアップ支援ツール メイン画像" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container detail-grid">
+        <article class="detail-main">
+
+          <div class="detail-section">
+            <p class="section-label">OVERVIEW</p>
+            <h2>概要</h2>
+            <p>
+              技術キャッチアップ支援ツールは、毎日流れてくるIT系の記事や技術ブログを、
+              自分の興味に合わせて収集・選別・要約するための個人用Webアプリです。
+            </p>
+            <p>
+              RSSで記事を広めに取得し、その中から読む価値が高そうな記事を選び、
+              要約した状態でスマホやPCから確認できるようにしています。
+              情報収集の負担を減らしながら、日々の学習や開発に活かしやすい形に整理することを目的としています。
+            </p>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">BACKGROUND</p>
+            <h2>開発の背景</h2>
+            <p>
+              IT系の記事や技術ブログは毎日多く公開されており、
+              すべてを確認するのは難しいと感じていました。
+              また、新着順に読むだけでは、自分に関係のある記事を見逃したり、
+              逆に興味のある分野だけに偏ってしまうことがあります。
+            </p>
+            <p>
+              そこで、記事をただ保存するのではなく、
+              自分の興味や開発内容に合わせて記事を選び、
+              短く要約した状態で確認できる仕組みを作ろうと考えました。
+            </p>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">PROBLEM</p>
+            <h2>解決したい課題</h2>
+
+            <div class="detail-card-list">
+              <div class="detail-card">
+                <h3>記事が多すぎて追いきれない</h3>
+                <p>
+                  技術ブログや公式情報は日々更新されるため、
+                  すべての記事を開いて読むには時間がかかります。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>読む優先度を判断しづらい</h3>
+                <p>
+                  タイトルだけでは、自分に関係がある記事なのか、
+                  今読むべき記事なのかを判断しにくい場合があります。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>学習内容が偏りやすい</h3>
+                <p>
+                  興味のある分野だけを追っていると、
+                  新しい分野や重要な公式情報に触れる機会が少なくなることがあります。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">SOLUTION</p>
+            <h2>システムで行っていること</h2>
+
+            <div class="detail-card-list two">
+              <div class="detail-card">
+                <h3>RSSから記事を収集</h3>
+                <p>
+                  技術ブログや公式ブログなどからRSSを取得し、
+                  記事タイトル・URL・公開日・概要などを保存します。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>興味に合わせて記事を選定</h3>
+                <p>
+                  自分の興味や開発内容に近い記事を優先しつつ、
+                  重要な公式情報や普段見ない分野の記事も少し混ぜる設計にしています。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>AIで要約を生成</h3>
+                <p>
+                  記事の内容を要約し、短い概要・技術ポイント・自分に関係ある理由・次にやることを整理します。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>スマホから確認</h3>
+                <p>
+                  要約済みの記事をWeb UIで表示し、スマホからでも読みやすいカード形式で確認できるようにしています。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">FLOW</p>
+            <h2>処理の流れ</h2>
+
+            <div class="flow-box">
+              <ol class="flow-list">
+                <li>RSSや手動URLから記事情報を取得</li>
+                <li>SQLiteに記事情報や処理状態を保存</li>
+                <li>興味・重要度・探索枠をもとに要約対象を選定</li>
+                <li>Codex CLIを使って記事の要約を生成</li>
+                <li>要約結果を保存し、React UIに表示</li>
+                <li>「試したい」記事はNotionにも保存できるようにする</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">FEATURES</p>
+            <h2>主な機能</h2>
+
+            <div class="detail-card-list two">
+              <div class="detail-card">
+                <h3>記事一覧表示</h3>
+                <p>
+                  要約済みの記事をカード形式で表示し、
+                  内容を短時間で確認できるようにしています。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>リアクション管理</h3>
+                <p>
+                  興味ある・興味なし・試したい、などの反応を保存し、
+                  今後の記事選定や整理に活かせるようにしています。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>手動URL登録</h3>
+                <p>
+                  RSSだけでなく、自分で見つけた記事URLも登録し、
+                  要約対象として扱えるようにしています。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>Notion連携</h3>
+                <p>
+                  すべての記事ではなく、「あとで試したい」と思った記事だけをNotionに保存できる構成にしています。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">POINT</p>
+            <h2>工夫した点</h2>
+
+            <div class="detail-card-list two">
+              <div class="detail-card">
+                <h3>読む場所と保存場所を分けた</h3>
+                <p>
+                  日々の記事閲覧はReactのWeb UIで行い、
+                  長期的に残したい記事だけをNotionに保存する設計にしました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>興味だけに偏らない記事選定</h3>
+                <p>
+                  自分の興味に近い記事を中心にしながら、
+                  公式情報や探索枠も混ぜることで、学習の偏りを減らすことを意識しました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>DockerとWindowsホストを分離</h3>
+                <p>
+                Docker上のWebアプリとWindows上の要約処理を分離し、
+                専用の実行サーバーを通して安全に処理を呼び出す構成にしました。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>状態管理を持たせた</h3>
+                <p>
+                  記事や要約だけでなく、ジョブの実行状態もSQLiteに保存し、
+                  実行中・成功・失敗などを画面から確認できるようにしています。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">SYSTEM</p>
+            <h2>システム構成</h2>
+
+            <div class="detail-card-list">
+              <div class="detail-card">
+                <h3>React + Vite</h3>
+                <p>
+                  記事一覧、要約表示、リアクション操作、手動URL登録など、
+                  ユーザーが操作する画面を担当しています。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>Node.js + Express</h3>
+                <p>
+                  記事管理、要約結果の保存、ジョブ管理、Notion連携などのAPIを担当しています。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>SQLite</h3>
+                <p>
+                  記事、要約、リアクション、ジョブ、Notion同期状態などを保存しています。
+                  個人用のローカルアプリとして扱いやすい軽量な構成にしています。
+                </p>
+              </div>
+              <div class="detail-card">
+                <h3>Codex CLI / 専用の実行サーバー</h3>
+                <p>
+                  要約処理にはCodex CLIを利用し、
+                  Docker上のWebアプリとWindows上の要約処理を分離して、
+                  専用の実行サーバーを通して安全に処理を呼び出す構成にしています。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">VALUE</p>
+            <h2>このツールの価値</h2>
+
+            <div class="detail-card-list">
+              <div class="detail-card">
+                <h3>情報収集の負担を減らせる</h3>
+                <p>
+                  記事を一つずつ開いて読む前に、要約や技術ポイントを確認できるため、
+                  短時間で読むべき記事を判断しやすくなります。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>自分の開発に活かしやすい</h3>
+                <p>
+                  「自分にどう関係するか」や「次に何をすればよいか」まで整理することで、
+                  単なる情報収集で終わらず、学習や開発につなげやすくなります。
+                </p>
+              </div>
+
+              <div class="detail-card">
+                <h3>毎日続けやすい</h3>
+                <p>
+                  スマホから見やすい形にすることで、
+                  通勤中や空き時間にも技術情報を確認しやすくしています。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <p class="section-label">ROLE</p>
+            <h2>担当したこと</h2>
+            <p>
+              このツールは個人開発として、企画・設計・実装・運用まで一人で行っています。
+              フロントエンド、バックエンド、データベース、Docker環境、Windows側の実行処理、
+              Notion連携まで含めて、日常的に使える情報収集基盤として開発を進めています。
+            </p>
+          </div>
+
+        </article>
+
+        <aside class="detail-side">
+          <div class="side-card">
+            <p class="section-label">SUMMARY</p>
+            <h2>要点</h2>
+            <ul class="side-list">
+              <li>IT系の記事を収集・選別・要約する個人用ツール</li>
+              <li>React + Node.js + SQLite + Dockerで構成</li>
+              <li>Codex CLIを使って記事の要約を生成</li>
+              <li>スマホから読みやすいカードUIを目指して開発</li>
+              <li>「試したい」記事だけNotionに保存</li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <p class="section-label">KEYWORDS</p>
+            <h2>キーワード</h2>
+            <ul class="side-link-list">
+              <li><span>情報収集支援</span></li>
+              <li><span>RSS</span></li>
+              <li><span>AI要約</span></li>
+              <li><span>React</span></li>
+              <li><span>Node.js</span></li>
+              <li><span>SQLite</span></li>
+              <li><span>Docker</span></li>
+              <li><span>Notion連携</span></li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <p class="section-label">POSITION</p>
+            <h2>この制作物の位置づけ</h2>
+            <p>
+              ポートフォリオ全体の中では、
+              日々の学習や開発を支えるために作った個人用ツールとして位置づけています。
+              Webアプリ開発、AI活用、ローカル環境との連携を組み合わせた制作物です。
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+  <script src="./js/include.js"></script>
+</body>
+</html>
